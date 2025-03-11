@@ -93,27 +93,59 @@ MMO Game Server/
 │ ├── Asset/ 
 │ │ ├── Scripts/ 
 │ │ │ ├── Network/ 
+│ │ │ │ ├── Connector/ Setup TCP client connection
+│ │ │ │ ├── RecvBuffer/ Stores received data and manages read/write positions
+│ │ │ │ ├── SendBuffer/ Allocates send data buffer
+│ │ │ │ ├── ServerSession/ Handle packet transmission with server
+│ │ │ │ ├── Session/ Create session
 │ │ │ ├── Packet/ 
+│ │ │ │ ├── ClientPacketManager/ Dispatches clieet packet handlers 
+│ │ │ │ ├── GenPacket/ Create cliet packet handlers 
+│ │ │ ├── MyPlayer/ Create movement packet 
+│ │ │ ├── NetworkManager/ Connect to server 
+│ │ │ ├── PacketQueue/ Queues received packets
+│ │ │ ├── Player/ Player sylinder object
+│ │ │ ├── PlayerManager/ Serializes packet structures
 │ │ ├── ... / 
 │ ├── ... / 
 │ ├── ... /  
-│── webtest/ 
-│ ├── .vs/ 
-│ ├── Assets/ 
-│ │ ├── Scenes/ 
-│ │ ├── Setting/
-│ │ ├── TutorialInfo/
-│ │ │ ├── InputSystem_...   
+│── Common/ 
+│ ├── Packet/ 
+│ │ ├── ClientPacketManager/ Creates packets
+│ │ ├── GenPackets/ Define packet iDs aand handles serialization
+│ │ ├── ServerPacketManager/ Creates client packet and handles packet from server
+── DummyClient/ 
+│ ├── Packet/ 
+│ │ ├── ClientPacketManager/ 
+│ │ ├── GenPackets/ 
+│ │ ├── PacketHandler/ Parses server packets and updates UI
+│ ├── bin/ ...
+│ ├── obj/ ...
+│ ├── Program/ Creates client session
+│ ├── ServerSession/ Creates server session
+│ ├── SessionManager/ Sends movement packets
+── PacketGenerator/ 
+│ ├── bin/
+│ │ ├── GenPackets/ -
+│ │ ├── ServerPacketManager/ -
+│ ├── obj/
 │ │ │ ├── ...
-│ │ │ ├── ...
-│ │ │ ├── Webmanager.cs 
-│ │ │ ├── Webmanager.cs.meta
-│ ├── Logs/ 
-│ ├── Packages/ 
-│ ├── ProjectSettings/ 
+│ │ ├── ...
 │ ├── ...
 │ ├── ...
-│── 
+── Server/ 
+│ ├── Packet/ 
+│ │ ├── GenPackets/ -
+│ │ ├── ServerPacketManager/ -
+│ │ ├── PacketHandler/ Server pushes client requests asynchronously. 
+│ ├── Session/ 
+│ │ ├── ClientSession/ - Create client session
+│ │ ├── SessionManager/ - Creating, retrieving, and deleting client sessions.
+│ ├── bin/ 
+│ ├── obj/ 
+── ServerCore/ 
+├── ...
+├── ...
 │── README.md 
 │── .gitignore 
 
