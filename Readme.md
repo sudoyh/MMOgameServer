@@ -99,13 +99,13 @@ MMO Game Server/
 │ │ │ │ ├── ServerSession/ # Handle packet transmission with server
 │ │ │ │ ├── Session/ # Create session
 │ │ │ ├── Packet/ 
-│ │ │ │ ├── ClientPacketManager/ # Dispatches clieet packet handlers 
+│ │ │ │ ├── ClientPacketManager/ # Dispatches client packet handlers 
 │ │ │ │ ├── GenPacket/ # Create cliet packet handlers 
 │ │ │ ├── MyPlayer/ # Create movement packet 
 │ │ │ ├── NetworkManager/ # Connect to server 
 │ │ │ ├── PacketQueue/ # Queues received packets
 │ │ │ ├── Player/ # Player sylinder object
-│ │ │ ├── PlayerManager/ # Serializes packet structures
+│ │ │ ├── PlayerManager/ # Manage player movement
 │ │ ├── ... / 
 │ ├── ... / 
 │ ├── ... /  
